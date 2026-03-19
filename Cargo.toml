@@ -1,0 +1,16 @@
+[package]
+name = "hpc-inferno"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+
+[lib]
+name = "hpc_inferno"
+path = "src/lib.rs"
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[profile.release]
+opt-level = 3
+lto = true
